@@ -1,3 +1,3 @@
 [submodule "lib/base"]
 	path = lib/base
-	url = git@github.com:madesst/OAuthBase.git
+	url = git://github.com/madesst/OAuthBase.git
