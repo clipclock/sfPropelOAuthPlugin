@@ -13,6 +13,8 @@ class Token extends BaseToken
   const STATUS_ACCESS = 'access';
   const STATUS_REQUEST = 'request';
 
+	protected $response_info;
+
   public function toOAuthToken()
   {
     return new OAuthToken($this->getTokenKey(), $this->getTokenSecret());
@@ -85,5 +87,15 @@ class Token extends BaseToken
     {
         return $this->getsfGuardUser();
     }
+
+	public function setResponseInfo($response_info)
+	{
+		$this->response_info = $response_info;
+	}
+
+	public function getResponseInfo()
+	{
+		return $this->response_info;
+	}
 
 }
