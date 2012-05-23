@@ -17,3 +17,5 @@ propel:
     updated_at:     ~
     _uniques:
       token_key: [token_key]
+      name_user_id_key: [name, user_id]
+      name_identifier_key: [name, identifier]
