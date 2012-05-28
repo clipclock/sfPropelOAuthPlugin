@@ -87,12 +87,13 @@ class TokenPeer extends BaseTokenPeer
     self::doDelete($c);
   }
 
-  public static function findOneByNameAndIdentifier($name, $identifier)
+  public static function findOneByNameAndIdentifier($name, $identifier, $expire)
   {
     $c = new Criteria();
 
     $c->add(TokenPeer::NAME, $name)
-      ->add(TokenPeer::IDENTIFIER, $identifier);
+      ->add(TokenPeer::IDENTIFIER, $identifier)
+	  ->add(TokenPeer::EXPIRE, $expire, Criteria::LESS_EQUAL);
 
     return self::doSelectOne($c);
   }
