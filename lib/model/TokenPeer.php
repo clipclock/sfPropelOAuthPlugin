@@ -93,7 +93,7 @@ class TokenPeer extends BaseTokenPeer
 
     $c->add(TokenPeer::NAME, $name)
       ->add(TokenPeer::IDENTIFIER, $identifier)
-	  ->add(TokenPeer::EXPIRE, $expire, Criteria::LESS_EQUAL);
+	  ->add(TokenPeer::EXPIRE, $expire ? $expire : time(), Criteria::LESS_EQUAL);
 
     return self::doSelectOne($c);
   }
