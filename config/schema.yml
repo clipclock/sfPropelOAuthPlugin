@@ -2,7 +2,7 @@ propel:
   _attributes:      { package: plugins.sfPropelOAuthPlugin.lib.model }
   
   token:
-    _attributes:    { phpName: Token }
+    _attributes:    { phpName: sfMelodyToken }
     id:             ~
     name:           { type: varchar, size: 255 }
     token_key:      { type: varchar, index: true }
