@@ -3,6 +3,10 @@ propel:
   
   token:
     _attributes:    { phpName: sfMelodyToken }
+    _propel_behaviors:
+      symfony:
+        form: false
+        filter: false
     id:             ~
     name:           { type: varchar, size: 255 }
     token_key:      { type: varchar, index: true }
