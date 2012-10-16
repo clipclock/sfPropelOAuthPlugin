@@ -105,4 +105,13 @@ class TokenPeer extends BaseTokenPeer
 
     return self::doSelect($c);
   }
+
+  public static function findByUserIdAndName($user_id, $name = 'facebook')
+  {
+    $c = new Criteria();
+    $c->add(TokenPeer::USER_ID, $user_id)
+      ->add(TokenPeer::NAME, $name);
+
+    return self::doSelectOne($c);
+  }
 }
